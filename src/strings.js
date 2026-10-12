@@ -15,6 +15,8 @@ module.exports = {
       title: 'Terapia online para volver a <em>tu propio ritmo.</em>',
       lead: 'Soy Adelina Arocena, psicóloga clínica, sexóloga y terapeuta de pareja. Acompaño a adultos y parejas en español y en inglés, estés donde estés.',
       cta: 'Pedir una primera consulta',
+      ctaFree: 'Reservar llamada gratuita de {n} min',
+      facts: ['Online, por videollamada', 'Español e inglés', 'Adultos y parejas', 'Sesiones de 50 min'],
       cta2: 'Cómo trabajo',
       photo: 'Foto de Adelina',
       caption: 'Adelina Arocena, fundadora de Atempo',
@@ -26,6 +28,7 @@ module.exports = {
       p1: 'He vivido en varios países y sé lo que es empezar de cero lejos de casa. Por eso trabajo con personas de todas partes del mundo, en el idioma en el que mejor puedan contar lo que les pasa: español o inglés, los dos nativos.',
       p2: 'Dar el paso de escribir a una psicóloga por primera vez puede costar. Mi trabajo empieza ahí: que desde el primer mensaje sientas un espacio cálido y seguro. Entiendo la terapia como un trabajo en equipo, en el que vamos comprendiendo juntos tu historia, tus recursos y lo que necesitas ahora.',
       credsTitle: 'Formación',
+      approachTitle: 'Enfoques',
       creds: ['Grado en Psicología', 'Máster en Psicología Clínica', 'Máster en Sexología, Terapia Sexual y Terapia de Pareja'],
       quoteTitle: '¿Por qué Atempo?',
       quote: 'Atempo nace del ritmo, del equilibrio y de volver a tu propio paso. También es un pequeño juego con “a tiempo”. Quería una marca que se sintiera mía y que reflejara cómo ha crecido mi práctica y los valores que la guían: un lugar de conexión, crecimiento y calidez, donde bajar el ritmo, entenderte mejor y avanzar hacia un cambio que tenga sentido para ti.',
@@ -63,7 +66,10 @@ module.exports = {
         { name: 'Terapia de pareja', price: '75 €' },
         { name: 'Terapia sexual', price: '65 €' }
       ],
-      note: 'Todas las sesiones son por videollamada, en español o en inglés.'
+      note: 'Todas las sesiones son por videollamada, en español o en inglés.',
+      hoursTitle: 'Horario',
+      cancelTitle: 'Cancelaciones',
+      cancel: 'Puedes cancelar o cambiar tu cita sin coste avisando con {n} horas de antelación.'
     },
     faq: {
       kicker: 'Preguntas',
@@ -81,7 +87,7 @@ module.exports = {
       title: 'Si has llegado hasta aquí, <em>bienvenida, bienvenido.</em>',
       lead: 'Cuéntame lo básico y te escribo para coordinar la primera sesión. No hace falta que lo expliques todo ahora.',
       crisis: 'Atempo no es un servicio de urgencias. Si estás en peligro, llama al 112 o al número de emergencias de tu país (en España, también al 024).',
-      name: 'Nombre', email: 'Correo electrónico', phone: 'Teléfono (opcional)',
+      name: 'Nombre', email: 'Correo electrónico', phone: 'Teléfono (opcional)', where: 'País o ciudad desde donde te conectarías (opcional)',
       type: '¿Qué tipo de terapia buscas?', typeOpts: ['Individual', 'De pareja', 'Sexual', 'Aún no lo sé'],
       language: 'Idioma de las sesiones', langOpts: ['Español', 'Inglés'],
       message: 'En pocas palabras, ¿qué te gustaría trabajar?', messageHint: 'Opcional. No incluyas detalles que prefieras contar en sesión.',
@@ -115,6 +121,8 @@ module.exports = {
       title: 'Online therapy to find <em>your own pace again.</em>',
       lead: 'I’m Adelina Arocena, a clinical psychologist, sexologist and couples therapist. I work with adults and couples in English and Spanish, wherever you are.',
       cta: 'Book a first session',
+      ctaFree: 'Book a free {n}-min call',
+      facts: ['Online, by video call', 'English and Spanish', 'Adults and couples', '50-minute sessions'],
       cta2: 'How I work',
       photo: 'Photo of Adelina',
       caption: 'Adelina Arocena, founder of Atempo',
@@ -126,6 +134,7 @@ module.exports = {
       p1: 'I’ve lived in several countries and I know what it takes to start over far from home. That’s why I work with people from all over the world, in whichever language lets them say what’s really going on: English or Spanish, both native.',
       p2: 'Reaching out to a therapist for the first time can be hard. My work starts right there: making the space feel warm and safe from your very first message. I see therapy as a collaboration, where we build an understanding of your story, your strengths and what you need right now.',
       credsTitle: 'Training',
+      approachTitle: 'Approaches',
       creds: ['Bachelor’s in Psychology', 'Master’s in Clinical Psychology', 'Master’s in Sexology, Sex Therapy and Couples Therapy'],
       quoteTitle: 'Why Atempo?',
       quote: 'Atempo is inspired by rhythm, balance and returning to your own pace, and it’s also a gentle play on “a tiempo”, Spanish for “in time”. I wanted a brand that felt personal to me and reflected how my practice has grown and the values that guide it: a place of connection, growth and warmth, where people can slow down, understand themselves better and move towards meaningful change.',
@@ -163,7 +172,10 @@ module.exports = {
         { name: 'Couples therapy', price: '€75' },
         { name: 'Sex therapy', price: '€65' }
       ],
-      note: 'All sessions are held by video call, in English or Spanish.'
+      note: 'All sessions are held by video call, in English or Spanish.',
+      hoursTitle: 'Hours',
+      cancelTitle: 'Cancellations',
+      cancel: 'You can cancel or move your appointment free of charge with {n} hours’ notice.'
     },
     faq: {
       kicker: 'FAQ',
@@ -181,7 +193,7 @@ module.exports = {
       title: 'If you’ve made it this far, <em>welcome.</em>',
       lead: 'Tell me the basics and I’ll write back to arrange a first session. You don’t need to explain everything now.',
       crisis: 'Atempo is not a crisis service. If you are in danger, call 112 or your local emergency number (in Spain, also 024).',
-      name: 'Name', email: 'Email', phone: 'Phone (optional)',
+      name: 'Name', email: 'Email', phone: 'Phone (optional)', where: 'Country or city you’d join from (optional)',
       type: 'What kind of therapy are you looking for?', typeOpts: ['Individual', 'Couples', 'Sex therapy', 'Not sure yet'],
       language: 'Session language', langOpts: ['English', 'Spanish'],
       message: 'In a few words, what would you like to work on?', messageHint: 'Optional. Leave out anything you’d rather share in session.',

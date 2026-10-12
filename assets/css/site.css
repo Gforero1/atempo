@@ -56,8 +56,15 @@ p{margin:0 0 1em}
 .top__nav a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:1px;background:var(--rose);transform:scaleX(0);transform-origin:left;transition:transform .3s}
 .top__nav a:hover::after{transform:scaleX(1)}
 .top__end{display:flex;align-items:center;gap:.9rem}
-.lang{font:500 .78rem/1 var(--sans);letter-spacing:.12em;text-decoration:none;padding:.55em .2em;border-bottom:1px solid var(--rose)}
-@media (max-width:420px){.top__end .btn--small{display:none}}
+/* Selector de idioma: los dos visibles, el activo relleno */
+.langs{display:flex;border:1px solid var(--brown);border-radius:2px;overflow:hidden}
+.langs a{font:500 .8rem/1 var(--sans);letter-spacing:.06em;text-decoration:none;padding:.62em .85em;color:var(--brown);transition:background .2s,color .2s}
+.langs a+a{border-left:1px solid var(--brown)}
+.langs a.is-on{background:var(--brown);color:var(--linen)}
+.langs a:not(.is-on):hover{background:var(--lav-soft)}
+.langs__long{display:none}
+@media (min-width:1100px){.langs__long{display:inline}.langs__short{display:none}}
+@media (max-width:759px){.top__end .btn--small{display:none}}
 @media (min-width:960px){.top__nav{display:flex}}
 
 /* Hero */
@@ -72,6 +79,9 @@ p{margin:0 0 1em}
 .hero__lead{font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:34rem;margin:1.6rem 0 2rem;color:var(--brown)}
 .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2rem;margin:0}
 
+.facts{list-style:none;margin:2.2rem 0 0;padding:1rem 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem 0;font-size:.85rem;color:var(--brown-2);max-width:36rem}
+.facts li{display:flex;align-items:center}
+.facts li:not(:last-child)::after{content:"";width:4px;height:4px;border-radius:50%;background:var(--rose);margin:0 .8rem}
 .portrait{margin:0;justify-self:end;width:100%;max-width:420px}
 .portrait__frame{aspect-ratio:4/5;background:var(--lav);overflow:hidden;position:relative}
 .portrait__frame img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
@@ -84,11 +94,11 @@ p{margin:0 0 1em}
 /* La línea que respira: 60 bpm de fondo, 6 respiraciones por minuto */
 .pulse{grid-column:1/-1;height:80px;margin:clamp(0px,3vw,40px) calc(var(--gut) * -1) 0;overflow:hidden}
 .pulse__svg{width:100%;height:100%;display:block;overflow:visible}
-.pulse__path{fill:none;stroke:var(--rose);stroke-width:1.2;vector-effect:non-scaling-stroke}
+.pulse__path{fill:none;stroke:var(--rose);stroke-width:1.6;vector-effect:non-scaling-stroke}
 .pulse__row{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.6rem 1.5rem;margin-top:-.3rem}
-.pulse__label{margin:0;font-size:.75rem;color:var(--brown-2);display:flex;gap:.8em;align-items:baseline;letter-spacing:.02em}
-.pulse__note{font:italic 400 .95rem/1 var(--serif);color:var(--brown);white-space:nowrap}
-.pulse__note svg{display:inline-block;vertical-align:-2px;margin-right:.15em}
+.pulse__label{margin:0;font-size:.9rem;color:var(--brown-2);display:flex;flex-wrap:wrap;gap:.3em .9em;align-items:baseline;letter-spacing:.01em}
+.pulse__note{font:italic 500 clamp(1.7rem,3vw,2.2rem)/1 var(--serif);color:var(--brown);white-space:nowrap;letter-spacing:-.01em}
+.pulse__note svg{display:inline-block;vertical-align:-3px;margin-right:.2em}
 .motion{background:none;border:0;padding:.4em 0;font:500 .7rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--brown-2);cursor:pointer;border-bottom:1px solid transparent}
 .motion:hover{border-bottom-color:var(--rose)}
 .no-js .motion,.reduced .motion{display:none}
@@ -228,3 +238,22 @@ p{margin:0 0 1em}
 .legal__body{max-width:44rem;margin:0 auto;padding:60px var(--gut) 100px}
 .legal__body h1{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:2rem}
 .legal__body h2{font-size:1.35rem;margin:2rem 0 .6rem}
+
+/* Barra fija de reserva en móvil: aparece al pasar el hero y se esconde al llegar al formulario */
+.dock{display:none}
+@media (max-width:759px){
+  .dock{display:block;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:30;text-align:center;background:var(--brown);color:var(--linen);text-decoration:none;font:500 1rem/1 var(--sans);padding:1.05em 1em;border-radius:2px;transform:translateY(160%);transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+  .dock.is-on{transform:none}
+  .foot{padding-bottom:110px}
+}
+@media (prefers-reduced-motion:reduce){.dock{transition:none}}
+
+.about__sub{font:500 .75rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brown-2);margin:2rem 0 1rem}
+.fees__info{margin:2.4rem 0 0;display:grid;gap:1.2rem;border-top:1px solid rgba(230,225,218,.25);padding-top:1.6rem}
+.fees__info dt{font:500 .75rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--lav);margin-bottom:.4rem}
+.fees__info dd{margin:0;color:var(--linen)}
+
+/* Sobre lavanda el marrón secundario no llega a 4.5:1; ahí se usa el principal */
+.quote,.contact,.portrait__frame{--brown-2:#5A391E}
+.dock{box-shadow:0 0 0 1px rgba(230,225,218,.7)}
+@media (max-width:879px){.hero{row-gap:28px}.pulse{height:56px;margin-top:4px}}

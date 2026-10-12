@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/albert-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=mv584jm0">
+<link rel="stylesheet" href="assets/css/site.css?v=mv590gkk">
 <script>document.documentElement.classList.add('js');</script>
 <script>
 /* Primera visita: si el navegador no está en español, se muestra la versión en inglés */
@@ -41,7 +41,10 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
     <a href="#preguntas">Preguntas</a>
   </nav>
   <div class="top__end">
-    <a class="lang" href="en/" hreflang="en" lang="en" data-lang="en" aria-label="English">EN</a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <a href="./" hreflang="es" lang="es" data-lang="es" class="is-on" aria-current="page"><span class="langs__long">Español</span><span class="langs__short">ES</span></a>
+      <a href="en/" hreflang="en" lang="en" data-lang="en"><span class="langs__long">English</span><span class="langs__short">EN</span></a>
+    </nav>
     <a class="btn btn--small" href="#contacto">Primera consulta</a>
   </div>
 </header>
@@ -60,6 +63,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
       <a class="btn" href="#contacto">Pedir una primera consulta</a>
       <a class="link" href="#pasos">Cómo trabajo</a>
     </p>
+    <ul class="facts"><li>Online, por videollamada</li><li>Español e inglés</li><li>Adultos y parejas</li><li>Sesiones de 50 min</li></ul>
   </div>
   <figure class="portrait">
     <div class="portrait__frame">
@@ -72,7 +76,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
     <svg class="pulse__svg" viewBox="0 0 1200 80" preserveAspectRatio="none"><path class="pulse__path" d="M0 40 L1200 40"/></svg>
   </div>
   <div class="pulse__row">
-  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="7" height="15" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>el pulso de alguien en calma</span></p>
+  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="12" height="26" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>el pulso de alguien en calma</span></p>
   <button class="motion" type="button" aria-pressed="false" data-pause="Pausar movimiento" data-play="Reanudar movimiento">Pausar movimiento</button>
   </div>
 </section>
@@ -87,6 +91,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
   <aside class="about__creds reveal" aria-labelledby="creds-title">
     <h3 id="creds-title">Formación</h3>
     <ul><li>Grado en Psicología</li><li>Máster en Psicología Clínica</li><li>Máster en Sexología, Terapia Sexual y Terapia de Pareja</li></ul>
+    
     
   </aside>
   <figure class="quote reveal">
@@ -148,6 +153,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
     <div class="programme__row"><dt>Terapia sexual</dt><dd>65 €</dd></div>
   </dl>
   <p class="fees__note">Todas las sesiones son por videollamada, en español o en inglés.</p>
+  
 </section>
 
 <section class="faq" id="preguntas" aria-labelledby="faq-title">
@@ -180,6 +186,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
     <div class="field"><label for="f-name">Nombre</label><input id="f-name" name="nombre" autocomplete="name" required></div>
     <div class="field"><label for="f-email">Correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
     <div class="field"><label for="f-phone">Teléfono (opcional)</label><input id="f-phone" name="telefono" type="tel" autocomplete="tel"></div>
+    <div class="field"><label for="f-where">País o ciudad desde donde te conectarías (opcional)</label><input id="f-where" name="pais_ciudad" autocomplete="country-name"></div>
     <fieldset class="choice">
       <legend>¿Qué tipo de terapia buscas?</legend>
       <label><input type="radio" name="tipo" value="Individual" required> <span>Individual</span></label><label><input type="radio" name="tipo" value="De pareja"> <span>De pareja</span></label><label><input type="radio" name="tipo" value="Sexual"> <span>Sexual</span></label><label><input type="radio" name="tipo" value="Aún no lo sé"> <span>Aún no lo sé</span></label>
@@ -198,6 +205,8 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
 
 </main>
 
+<a class="dock" href="#contacto" tabindex="-1" aria-hidden="true">Primera consulta</a>
+
 <footer class="foot">
   <p class="mark mark--foot"><span class="mark__word">atempo</span><span class="mark__sub">psychology</span></p>
   <p>Terapia psicológica online en español e inglés.</p>
@@ -209,6 +218,6 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
   <p class="foot__small">© 2026 Adelina Arocena</p>
 </footer>
 
-<script src="assets/js/site.js?v=mv584jm0" defer></script>
+<script src="assets/js/site.js?v=mv590gkk" defer></script>
 </body>
 </html>

@@ -19,7 +19,7 @@
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="../assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/albert-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="../assets/css/site.css?v=mv584jm0">
+<link rel="stylesheet" href="../assets/css/site.css?v=mv590gkk">
 <script>document.documentElement.classList.add('js');</script>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Psychologist","name":"Atempo Psychology","founder":{"@type":"Person","name":"Adelina Arocena","jobTitle":"Clinical Psychologist"},"description":"Online therapy in English and Spanish with Adelina Arocena: individual, couples and sex therapy for adults, wherever you are.","url":"https://atempopsychology.com/en/","areaServed":"Worldwide","availableLanguage":["es","en"]}</script>
@@ -38,7 +38,10 @@
     <a href="#preguntas">FAQ</a>
   </nav>
   <div class="top__end">
-    <a class="lang" href="../" hreflang="es" lang="es" data-lang="es" aria-label="Español">ES</a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <a href="../" hreflang="es" lang="es" data-lang="es"><span class="langs__long">Español</span><span class="langs__short">ES</span></a>
+      <a href="./" hreflang="en" lang="en" data-lang="en" class="is-on" aria-current="page"><span class="langs__long">English</span><span class="langs__short">EN</span></a>
+    </nav>
     <a class="btn btn--small" href="#contacto">Book a first session</a>
   </div>
 </header>
@@ -57,6 +60,7 @@
       <a class="btn" href="#contacto">Book a first session</a>
       <a class="link" href="#pasos">How I work</a>
     </p>
+    <ul class="facts"><li>Online, by video call</li><li>English and Spanish</li><li>Adults and couples</li><li>50-minute sessions</li></ul>
   </div>
   <figure class="portrait">
     <div class="portrait__frame">
@@ -69,7 +73,7 @@
     <svg class="pulse__svg" viewBox="0 0 1200 80" preserveAspectRatio="none"><path class="pulse__path" d="M0 40 L1200 40"/></svg>
   </div>
   <div class="pulse__row">
-  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="7" height="15" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>the pulse of someone at rest</span></p>
+  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="12" height="26" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>the pulse of someone at rest</span></p>
   <button class="motion" type="button" aria-pressed="false" data-pause="Pause motion" data-play="Resume motion">Pause motion</button>
   </div>
 </section>
@@ -84,6 +88,7 @@
   <aside class="about__creds reveal" aria-labelledby="creds-title">
     <h3 id="creds-title">Training</h3>
     <ul><li>Bachelor’s in Psychology</li><li>Master’s in Clinical Psychology</li><li>Master’s in Sexology, Sex Therapy and Couples Therapy</li></ul>
+    
     
   </aside>
   <figure class="quote reveal">
@@ -145,6 +150,7 @@
     <div class="programme__row"><dt>Sex therapy</dt><dd>€65</dd></div>
   </dl>
   <p class="fees__note">All sessions are held by video call, in English or Spanish.</p>
+  
 </section>
 
 <section class="faq" id="preguntas" aria-labelledby="faq-title">
@@ -177,6 +183,7 @@
     <div class="field"><label for="f-name">Name</label><input id="f-name" name="nombre" autocomplete="name" required></div>
     <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
     <div class="field"><label for="f-phone">Phone (optional)</label><input id="f-phone" name="telefono" type="tel" autocomplete="tel"></div>
+    <div class="field"><label for="f-where">Country or city you’d join from (optional)</label><input id="f-where" name="pais_ciudad" autocomplete="country-name"></div>
     <fieldset class="choice">
       <legend>What kind of therapy are you looking for?</legend>
       <label><input type="radio" name="tipo" value="Individual" required> <span>Individual</span></label><label><input type="radio" name="tipo" value="Couples"> <span>Couples</span></label><label><input type="radio" name="tipo" value="Sex therapy"> <span>Sex therapy</span></label><label><input type="radio" name="tipo" value="Not sure yet"> <span>Not sure yet</span></label>
@@ -195,6 +202,8 @@
 
 </main>
 
+<a class="dock" href="#contacto" tabindex="-1" aria-hidden="true">Book a first session</a>
+
 <footer class="foot">
   <p class="mark mark--foot"><span class="mark__word">atempo</span><span class="mark__sub">psychology</span></p>
   <p>Online psychological therapy in English and Spanish.</p>
@@ -206,6 +215,6 @@
   <p class="foot__small">© 2026 Adelina Arocena</p>
 </footer>
 
-<script src="../assets/js/site.js?v=mv584jm0" defer></script>
+<script src="../assets/js/site.js?v=mv590gkk" defer></script>
 </body>
 </html>

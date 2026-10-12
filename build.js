@@ -71,7 +71,10 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
     <a href="#preguntas">${t.nav.faq}</a>
   </nav>
   <div class="top__end">
-    <a class="lang" href="${otherHref}" hreflang="${t.other.code}" lang="${t.other.code}" data-lang="${t.other.code}" aria-label="${t.other.label}">${t.other.short}</a>
+    <nav class="langs" aria-label="Idioma / Language">
+      <a href="${isEn ? '../' : './'}" hreflang="es" lang="es" data-lang="es"${isEn ? '' : ' class="is-on" aria-current="page"'}><span class="langs__long">Español</span><span class="langs__short">ES</span></a>
+      <a href="${isEn ? './' : 'en/'}" hreflang="en" lang="en" data-lang="en"${isEn ? ' class="is-on" aria-current="page"' : ''}><span class="langs__long">English</span><span class="langs__short">EN</span></a>
+    </nav>
     <a class="btn btn--small" href="#contacto">${t.nav.contact}</a>
   </div>
 </header>
@@ -87,9 +90,10 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
     <h1 id="hero-title">${t.hero.title}</h1>
     <p class="hero__lead">${t.hero.lead}</p>
     <p class="hero__actions">
-      <a class="btn" href="#contacto">${t.hero.cta}</a>
+      <a class="btn" href="#contacto">${C.freeCallMinutes ? t.hero.ctaFree.replace('{n}', C.freeCallMinutes) : t.hero.cta}</a>
       <a class="link" href="#pasos">${t.hero.cta2}</a>
     </p>
+    <ul class="facts">${t.hero.facts.map(f => `<li>${f}</li>`).join('')}</ul>
   </div>
   <figure class="portrait">
     <div class="portrait__frame">
@@ -102,7 +106,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
     <svg class="pulse__svg" viewBox="0 0 1200 80" preserveAspectRatio="none"><path class="pulse__path" d="M0 40 L1200 40"/></svg>
   </div>
   <div class="pulse__row">
-  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="7" height="15" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>${t.hero.bpm}</span></p>
+  <p class="pulse__label"><span class="pulse__note"><svg viewBox="0 0 10 22" width="12" height="26" aria-hidden="true"><ellipse cx="4" cy="18" rx="3.6" ry="2.6" transform="rotate(-22 4 18)" fill="currentColor"/><path d="M7.2 17V1" stroke="currentColor" stroke-width="1.2"/></svg> = 60</span> <span>${t.hero.bpm}</span></p>
   <button class="motion" type="button" aria-pressed="false" data-pause="${t.motion.pause}" data-play="${t.motion.play}">${t.motion.pause}</button>
   </div>
 </section>
@@ -117,6 +121,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
   <aside class="about__creds reveal" aria-labelledby="creds-title">
     <h3 id="creds-title">${t.about.credsTitle}</h3>
     <ul>${t.about.creds.map(c => `<li>${c}</li>`).join('')}</ul>
+    ${(isEn ? C.approachesEn : C.approaches).length ? `<h3 class="about__sub">${t.about.approachTitle}</h3><ul>${(isEn ? C.approachesEn : C.approaches).map(a => `<li>${a}</li>`).join('')}</ul>` : ''}
     ${C.colegiada ? `<p class="about__num">${isEn ? 'Registration no.' : 'N.º de colegiada'} ${C.colegiada}</p>` : ''}
   </aside>
   <figure class="quote reveal">
@@ -162,6 +167,10 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
     ${t.fees.items.map(f => `<div class="programme__row"><dt>${f.name}</dt><dd>${f.price}</dd></div>`).join('\n    ')}
   </dl>
   <p class="fees__note">${t.fees.note}</p>
+  ${(isEn ? C.hoursEn : C.hours) || C.cancelHours ? `<dl class="fees__info">
+    ${(isEn ? C.hoursEn : C.hours) ? `<div><dt>${t.fees.hoursTitle}</dt><dd>${isEn ? C.hoursEn : C.hours}</dd></div>` : ''}
+    ${C.cancelHours ? `<div><dt>${t.fees.cancelTitle}</dt><dd>${t.fees.cancel.replace('{n}', C.cancelHours)}</dd></div>` : ''}
+  </dl>` : ''}
 </section>
 
 <section class="faq" id="preguntas" aria-labelledby="faq-title">
@@ -190,6 +199,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
     <div class="field"><label for="f-name">${t.contact.name}</label><input id="f-name" name="nombre" autocomplete="name" required></div>
     <div class="field"><label for="f-email">${t.contact.email}</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
     <div class="field"><label for="f-phone">${t.contact.phone}</label><input id="f-phone" name="telefono" type="tel" autocomplete="tel"></div>
+    <div class="field"><label for="f-where">${t.contact.where}</label><input id="f-where" name="pais_ciudad" autocomplete="country-name"></div>
     <fieldset class="choice">
       <legend>${t.contact.type}</legend>
       ${t.contact.typeOpts.map((o, i) => `<label><input type="radio" name="tipo" value="${esc(o)}"${i === 0 ? ' required' : ''}> <span>${o}</span></label>`).join('')}
@@ -207,6 +217,8 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
 </section>
 
 </main>
+
+<a class="dock" href="#contacto" tabindex="-1" aria-hidden="true">${C.freeCallMinutes ? t.hero.ctaFree.replace('{n}', C.freeCallMinutes) : t.nav.contact}</a>
 
 <footer class="foot">
   <p class="mark mark--foot"><span class="mark__word">atempo</span><span class="mark__sub">psychology</span></p>
@@ -234,7 +246,7 @@ function legalPage(isEn) {
 <h2>Who is responsible</h2>
 <p>Adelina Arocena, clinical psychologist${C.colegiada ? `, registration no. ${C.colegiada}` : ` (registration no. ${pend})`}. Tax ID: ${pend}. Contact: ${C.email || pend}.</p>
 <h2>What data this website collects</h2>
-<p>Only what you send through the contact form: name, email, optional phone, the type of therapy and language you’re interested in, and an optional short message. Please don’t include health details you’d rather share in session.</p>
+<p>Only what you send through the contact form: name, email, optional phone, your country or city, the type of therapy and language you’re interested in, and an optional short message. Please don’t include health details you’d rather share in session.</p>
 <h2>What it is used for</h2>
 <p>Solely to reply to your enquiry and arrange a first session. It is not used for marketing and is not shared with third parties, except the form provider that delivers the message by email, which acts as a data processor.</p>
 <h2>Legal basis and retention</h2>
@@ -248,7 +260,7 @@ function legalPage(isEn) {
 <h2>Responsable</h2>
 <p>Adelina Arocena, psicóloga clínica${C.colegiada ? `, n.º de colegiada ${C.colegiada}` : ` (n.º de colegiada ${pend})`}. NIF: ${pend}. Contacto: ${C.email || pend}.</p>
 <h2>Qué datos recoge esta web</h2>
-<p>Solo los que envías por el formulario de contacto: nombre, correo, teléfono opcional, el tipo de terapia y el idioma que te interesan y un mensaje breve opcional. Te pedimos que no incluyas datos de salud que prefieras contar en sesión.</p>
+<p>Solo los que envías por el formulario de contacto: nombre, correo, teléfono opcional, país o ciudad, el tipo de terapia y el idioma que te interesan y un mensaje breve opcional. Te pedimos que no incluyas datos de salud que prefieras contar en sesión.</p>
 <h2>Para qué se usan</h2>
 <p>Únicamente para responder a tu consulta y coordinar una primera sesión. No se usan con fines comerciales ni se ceden a terceros, salvo al proveedor del formulario que entrega el mensaje por correo, que actúa como encargado del tratamiento.</p>
 <h2>Base legal y conservación</h2>

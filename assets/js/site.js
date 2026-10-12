@@ -5,7 +5,7 @@
   if (reduce) root.classList.add('reduced');
 
   /* Idioma: recordar la elección */
-  document.querySelectorAll('.lang').forEach(function (a) {
+  document.querySelectorAll('.langs a').forEach(function (a) {
     a.addEventListener('click', function () {
       try { localStorage.setItem('atempo-lang', a.getAttribute('data-lang')); } catch (e) {}
     });
@@ -18,6 +18,22 @@
     var onScroll = function () { top.classList.toggle('is-scrolled', window.scrollY > 8); };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
+  }
+
+  /* Barra de reserva en móvil */
+  var dock = document.querySelector('.dock');
+  var hero = document.querySelector('.hero');
+  var contact = document.getElementById('contacto');
+  if (dock && hero && contact && 'IntersectionObserver' in window) {
+    var heroIn = true, contactIn = false;
+    var sync = function () {
+      var on = !heroIn && !contactIn;
+      dock.classList.toggle('is-on', on);
+      dock.setAttribute('aria-hidden', String(!on));
+      dock.tabIndex = on ? 0 : -1;
+    };
+    new IntersectionObserver(function (es) { heroIn = es[0].isIntersecting; sync(); }, { threshold: 0 }).observe(hero.querySelector('.hero__actions'));
+    new IntersectionObserver(function (es) { contactIn = es[0].isIntersecting; sync(); }, { threshold: 0 }).observe(contact);
   }
 
   /* Aparición al entrar en pantalla */
