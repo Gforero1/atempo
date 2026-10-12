@@ -183,7 +183,7 @@ module.exports = {
       items: [
         { q: 'Does online therapy work as well as in person?', a: 'For most people, yes. Research shows online therapy can be just as effective as in-person therapy, and it saves you the commute: all you need is a device, a stable connection and a quiet place to talk. It isn’t right for everyone, so if you’re unsure, write to me and we’ll talk it through.' },
         { q: 'What language are sessions in?', a: 'English or Spanish, both are my native languages. Choose whichever feels more comfortable, or use both.' },
-        { q: 'Do you see under-18s?', a: 'No. Atempo works only with adults aged 18 and over.' },
+        { q: 'Do you work with children and adolescents?', a: 'No. Atempo works only with adults aged 18 and over.' },
         { q: 'Which countries can I join from?', a: 'Wherever you are, I’m here for you.' },
         { q: 'What if I have an emergency?', a: 'Atempo is not a crisis service. If your life or someone else’s is at risk, call 112 or your local emergency number. In Spain you can also call 024, a free 24-hour suicide prevention line.' }
       ]
