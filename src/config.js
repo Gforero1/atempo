@@ -8,7 +8,7 @@ module.exports = {
   // Si está vacío, el formulario abre el correo de la persona con el mensaje ya escrito.
   formEndpoint: '',
   // Instagram sin @ (opcional)
-  instagram: '',
+  instagram: 'atempo__psych',
   // Número de colegiada (obligatorio en España para el aviso legal). PENDIENTE.
   colegiada: '',
   // --- Opcionales: si se dejan vacíos, no aparecen en la web ---
@@ -18,7 +18,7 @@ module.exports = {
   hours: '',
   hoursEn: '',
   // Horas de antelación para cancelar sin coste, p. ej. 24
-  cancelHours: 0,
+  cancelHours: 24,
   // Enfoques terapéuticos con los que trabaja (p. ej. 'Terapia cognitivo-conductual', 'EMDR')
   approaches: [],
   approachesEn: []

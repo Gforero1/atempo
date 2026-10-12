@@ -75,7 +75,7 @@ p{margin:0 0 1em}
 .entry__term{font:italic 400 1.35rem/1.2 var(--serif)}
 .entry__gram{font-size:.8rem;color:var(--brown-2);margin-left:.4em}
 .entry dd{margin:0;font-size:.92rem;color:var(--brown-2);line-height:1.5}
-.hero h1{font-size:clamp(2.5rem,6vw,4.4rem);font-weight:380;max-width:13ch}
+.hero h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:380;max-width:16ch}
 .hero__lead{font-size:clamp(1.05rem,1.4vw,1.2rem);max-width:34rem;margin:1.6rem 0 2rem;color:var(--brown)}
 .hero__actions{display:flex;flex-wrap:wrap;align-items:center;gap:1.4rem 2rem;margin:0}
 
@@ -122,7 +122,9 @@ p{margin:0 0 1em}
 }
 .quote{margin:clamp(30px,5vw,60px) 0 0;background:var(--lav);padding:clamp(28px,5vw,64px);position:relative}
 .quote__title{font:italic 400 1.5rem/1.1 var(--serif);margin-bottom:1.2rem;color:var(--brown)}
-.quote blockquote{margin:0}
+.quote blockquote{margin:0;position:relative}
+.quote blockquote p::before{content:"“";position:absolute;left:-.55em;top:-.12em;font-size:2.4em;line-height:1;color:var(--rose)}
+.quote blockquote p::after{content:"”";font-size:2.4em;line-height:0;vertical-align:-.42em;margin-left:.08em;color:var(--rose)}
 .quote blockquote p{font:400 clamp(1.15rem,1.8vw,1.4rem)/1.5 var(--serif);margin:0;max-width:40rem}
 .quote figcaption{margin-top:1.4rem;font-size:.85rem;color:var(--brown-2)}
 .quote figcaption::before{content:"— "}
@@ -143,9 +145,11 @@ p{margin:0 0 1em}
 }
 .themes{margin-top:clamp(56px,7vw,96px);display:grid;gap:1.2rem}
 .themes h3{font:500 .75rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--brown-2)}
-.themes__list{list-style:none;padding:0;margin:0;font:400 clamp(1.3rem,2.4vw,1.9rem)/1.45 var(--serif);max-width:58rem}
-.themes__list li{display:inline}
-.themes__list li:not(:last-child)::after{content:" · ";color:var(--rose);padding:0 .15em}
+.themes h3{text-transform:none;letter-spacing:-.01em;font:400 clamp(1.4rem,2.6vw,2rem)/1.2 var(--serif);color:var(--brown);margin-bottom:.6rem}
+.themes__list{list-style:none;padding:0;margin:0;font:400 clamp(1.15rem,1.8vw,1.35rem)/1.35 var(--serif);max-width:58rem;columns:1;column-gap:3rem}
+@media (min-width:640px){.themes__list{columns:2}}
+.themes__list li{break-inside:avoid;padding:.55rem 0 .55rem 1.4rem;position:relative;border-bottom:1px solid var(--line)}
+.themes__list li::before{content:"";position:absolute;left:.1rem;top:1.05em;width:6px;height:6px;border-radius:50%;background:var(--rose)}
 .themes__for{margin:1rem 0 0;font-size:1rem;color:var(--brown-2)}
 .themes__for em{font:italic 400 1.15rem/1 var(--serif);color:var(--brown)}
 

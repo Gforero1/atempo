@@ -83,17 +83,13 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
 
 <section class="hero" aria-labelledby="hero-title">
   <div class="hero__text">
-    <dl class="entry">
-      <dt><span class="entry__term">${t.hero.term}</span> <span class="entry__gram">${t.hero.gram}</span></dt>
-      <dd>${t.hero.def}</dd>
-    </dl>
     <h1 id="hero-title">${t.hero.title}</h1>
     <p class="hero__lead">${t.hero.lead}</p>
     <p class="hero__actions">
       <a class="btn" href="#contacto">${C.freeCallMinutes ? t.hero.ctaFree.replace('{n}', C.freeCallMinutes) : t.hero.cta}</a>
       <a class="link" href="#pasos">${t.hero.cta2}</a>
     </p>
-    <ul class="facts">${t.hero.facts.map(f => `<li>${f}</li>`).join('')}</ul>
+
   </div>
   <figure class="portrait">
     <div class="portrait__frame">
@@ -146,7 +142,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
   <div class="themes reveal">
     <h3>${t.help.listTitle}</h3>
     <ul class="themes__list">${t.help.list.map(l => `<li>${l}</li>`).join('')}</ul>
-    <p class="themes__for"><span>${t.help.forTitle}</span> ${t.help.forList.map(f => `<em>${f}</em>`).join(', ')}.</p>
+
   </div>
 </section>
 
