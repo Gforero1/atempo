@@ -131,8 +131,8 @@ module.exports = {
     about: {
       kicker: 'About me',
       title: 'Born in the USA, raised with Uruguayan roots, and living in Spain for the past ten years.',
-      p1: 'I’ve lived in several countries and I know what it takes to start over far from home. That’s why I work with people from all over the world, in whichever language lets them express themselves: English or Spanish, both native.',
-      p2: 'Reaching out to a therapist for the first time can be hard. My work starts right there: making the space feel warm and safe from your very first message. I see therapy as a collaboration, where we build an understanding of your story, your strengths and what you need right now.',
+      p1: 'I’ve lived in several countries and I know what it takes to start over far from everything familiar. That’s why I work with people from all over the world, in whichever language lets them express themselves: English or Spanish.',
+      p2: 'Reaching out to a therapist for the first time can be difficult. My work starts right there: making the space feel warm and safe from your very first message. I see therapy as a collaboration, where we build an understanding of your story, your strengths and what you need right now.',
       credsTitle: 'Training',
       approachTitle: 'Approaches',
       creds: ['Bachelor’s in Psychology', 'Master’s in Clinical Psychology', 'Master’s in Sexology, Sex Therapy and Couples Therapy'],
