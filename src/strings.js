@@ -25,8 +25,8 @@ module.exports = {
     about: {
       kicker: 'Sobre mí',
       title: 'Nací en Estados Unidos, crecí entre raíces uruguayas y llevo diez años viviendo en España.',
-      p1: 'He vivido en varios países y sé lo que es empezar de cero lejos de casa. Por eso trabajo con personas de todas partes del mundo, en el idioma en el que mejor puedan expresarse: español o inglés, los dos nativos.',
-      p2: 'Dar el paso de escribir a una psicóloga por primera vez puede costar. Mi trabajo empieza ahí: que desde el primer mensaje sientas un espacio cálido y seguro. Entiendo la terapia como un trabajo en equipo, en el que vamos comprendiendo juntos tu historia, tus recursos y lo que necesitas ahora.',
+      p1: 'He vivido en varios países y sé lo que es empezar de cero lejos de lo conocido. Por eso trabajo con personas de todas partes del mundo, en el idioma en el que mejor puedan expresarse: español o inglés.',
+      p2: 'Dar el paso de escribir a una psicóloga por primera vez puede ser difícil. Mi trabajo empieza ahí: que desde el primer mensaje sientas un espacio cálido y seguro. Entiendo la terapia como un trabajo en equipo, en el que vamos comprendiendo juntos tu historia, tus recursos y lo que necesitas ahora.',
       credsTitle: 'Formación',
       approachTitle: 'Enfoques',
       creds: ['Grado en Psicología', 'Máster en Psicología Clínica', 'Máster en Sexología, Terapia Sexual y Terapia de Pareja'],
