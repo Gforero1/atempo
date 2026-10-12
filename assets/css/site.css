@@ -156,7 +156,7 @@ p{margin:0 0 1em}
 /* Cómo empezar: cinco pasos sobre cinco líneas, como un pentagrama */
 .steps{max-width:var(--max);margin:0 auto;padding:clamp(80px,11vw,150px) var(--gut);display:grid;gap:2.5rem}
 @media (min-width:900px){.steps{grid-template-columns:minmax(0,1fr) minmax(0,1.8fr);gap:4rem}}
-.steps h2{font-size:clamp(2rem,4vw,3.2rem);max-width:12ch}
+.steps h2{font-size:clamp(2rem,4vw,3.2rem);max-width:16ch}
 .staff{list-style:none;margin:0;padding:0}
 .staff li{display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:.2rem 1rem;padding:1.3rem 0;border-top:1px solid var(--brown)}
 .staff li:last-child{border-bottom:1px solid var(--brown)}

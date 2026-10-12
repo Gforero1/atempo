@@ -42,14 +42,14 @@ module.exports = {
         { n: 'II', name: 'Terapia de pareja', text: 'Para parejas que quieren volver a escucharse: conflictos que se repiten, distancia, cambios de etapa o decisiones difíciles.' },
         { n: 'III', name: 'Terapia sexual', text: 'Para hablar de sexualidad sin vergüenza y con rigor clínico, en solitario o en pareja.' }
       ],
-      listTitle: 'Suelo acompañar a personas que atraviesan:',
+      listTitle: 'Suelo acompañar a personas que quieren trabajar:',
       list: ['Trauma y duelo', 'Ansiedad', 'Estrés y sensación de desborde', 'Autoestima y confianza en ti', 'Problemas de pareja', 'Rupturas', 'Poner límites', 'Regulación emocional', 'Cambios vitales y adaptación', 'Crecimiento personal'],
       forTitle: 'Y muchas veces, con',
       forList: ['personas expatriadas', 'parejas', 'introvertidos', 'extrovertidos']
     },
     steps: {
       kicker: 'Cómo es empezar',
-      title: 'Sin prisa, pero sin dar vueltas',
+      title: 'Cómo organizaremos tu proceso de terapia',
       items: [
         { t: 'Me escribes', d: 'Rellenas el formulario con lo básico y te respondo para coordinar la primera sesión.' },
         { t: 'Nos conocemos', d: 'En la primera sesión me cuentas qué te trae y vemos si encajamos.' },
@@ -66,7 +66,7 @@ module.exports = {
         { name: 'Terapia de pareja', price: '75 €' },
         { name: 'Terapia sexual', price: '65 €' }
       ],
-      note: 'Todas las sesiones son por videollamada, en español o en inglés.',
+      note: 'Todas las sesiones son online, en español o en inglés.',
       hoursTitle: 'Horario',
       cancelTitle: 'Cancelaciones',
       cancel: 'Puedes cancelar o cambiar tu cita sin coste avisando con {n} horas de antelación.'
@@ -78,7 +78,7 @@ module.exports = {
         { q: '¿La terapia online funciona igual que la presencial?', a: 'Para la mayoría de las personas, sí. La investigación muestra que la terapia online puede ser tan eficaz como la presencial, y te ahorra desplazamientos: solo necesitas un dispositivo, buena conexión y un sitio donde hablar con tranquilidad. No es lo indicado para todo el mundo; si tienes dudas, escríbeme y lo valoramos.' },
         { q: '¿En qué idioma son las sesiones?', a: 'En español o en inglés, los dos son mis idiomas nativos. Puedes elegir el que te resulte más cómodo, o combinar los dos.' },
         { q: '¿Atiendes a menores?', a: 'No. Atempo trabaja solo con personas mayores de 18 años.' },
-        { q: '¿Desde qué países puedo hacer terapia contigo?', a: 'Desde donde estés, siempre que podamos coincidir en un horario razonable.' },
+        { q: '¿Desde qué países puedo hacer terapia contigo?', a: 'Estés donde estés, aquí estoy para ti.' },
         { q: '¿Y si tengo una emergencia?', a: 'Atempo no es un servicio de urgencias. Si tu vida o la de otra persona corre peligro, llama al 112 o al número de emergencias de tu país. En España también puedes llamar al 024, la línea de atención a la conducta suicida, gratuita y disponible las 24 horas.' }
       ]
     },
@@ -155,7 +155,7 @@ module.exports = {
     },
     steps: {
       kicker: 'Getting started',
-      title: 'Unhurried, but straight to it',
+      title: 'How we’ll organise your therapy process',
       items: [
         { t: 'You get in touch', d: 'Fill in the short form and I’ll reply to arrange your first session.' },
         { t: 'We meet', d: 'In the first session you tell me what brings you here and we see if we’re a good fit.' },
@@ -172,7 +172,7 @@ module.exports = {
         { name: 'Couples therapy', price: '€75' },
         { name: 'Sex therapy', price: '€65' }
       ],
-      note: 'All sessions are held by video call, in English or Spanish.',
+      note: 'All sessions are held online, in English or Spanish.',
       hoursTitle: 'Hours',
       cancelTitle: 'Cancellations',
       cancel: 'You can cancel or move your appointment free of charge with {n} hours’ notice.'
@@ -184,7 +184,7 @@ module.exports = {
         { q: 'Does online therapy work as well as in person?', a: 'For most people, yes. Research shows online therapy can be just as effective as in-person therapy, and it saves you the commute: all you need is a device, a stable connection and a quiet place to talk. It isn’t right for everyone, so if you’re unsure, write to me and we’ll talk it through.' },
         { q: 'What language are sessions in?', a: 'English or Spanish, both are my native languages. Choose whichever feels more comfortable, or use both.' },
         { q: 'Do you see under-18s?', a: 'No. Atempo works only with adults aged 18 and over.' },
-        { q: 'Which countries can I join from?', a: 'Wherever you are, as long as we can find a time that works for both of us.' },
+        { q: 'Which countries can I join from?', a: 'Wherever you are, I’m here for you.' },
         { q: 'What if I have an emergency?', a: 'Atempo is not a crisis service. If your life or someone else’s is at risk, call 112 or your local emergency number. In Spain you can also call 024, a free 24-hour suicide prevention line.' }
       ]
     },
