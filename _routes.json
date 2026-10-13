@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/", "/en", "/en/", "/privacidad.html", "/en/privacy.html", "/api/*", "/media/*"],
+  "exclude": []
+}

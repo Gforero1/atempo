@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Editor · Atempo</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/admin/admin.css?v=2">
+</head>
+<body>
+
+<!-- Entrada -->
+<section class="login" id="login" hidden>
+  <form class="login__box" id="login-form">
+    <p class="mark"><span class="mark__word">atempo</span><span class="mark__sub">editor</span></p>
+    <h1>Entra para editar tu web</h1>
+    <label class="fld">
+      <span class="fld__label">Contraseña</span>
+      <input type="password" id="login-pass" autocomplete="current-password" required>
+    </label>
+    <button class="btn btn--full" type="submit">Entrar</button>
+    <p class="login__msg" id="login-msg" role="alert"></p>
+  </form>
+</section>
+
+<!-- Editor -->
+<div class="app" id="app" hidden>
+  <header class="bar">
+    <p class="mark mark--bar"><span class="mark__word">atempo</span><span class="mark__sub">editor</span></p>
+
+    <div class="seg" role="group" aria-label="Idioma que editas">
+      <button type="button" data-lang="es" aria-pressed="true">Español</button>
+      <button type="button" data-lang="en" aria-pressed="false">English</button>
+    </div>
+
+    <div class="seg seg--device" role="group" aria-label="Tamaño de la vista previa">
+      <button type="button" data-device="desktop" aria-pressed="true">Ordenador</button>
+      <button type="button" data-device="mobile" aria-pressed="false">Móvil</button>
+    </div>
+
+    <p class="bar__status" id="status" aria-live="polite">Todo publicado</p>
+
+    <div class="bar__end">
+      <a class="bar__link" href="/" target="_blank" rel="noopener" id="view-live">Ver web</a>
+      <button class="btn btn--ghost" type="button" id="discard" hidden>Descartar cambios</button>
+      <button class="btn" type="button" id="publish" disabled>Publicar</button>
+    </div>
+  </header>
+
+  <aside class="side" id="side">
+    <div class="side__intro" id="intro">
+      <p><strong>Toca cualquier texto de la vista previa</strong> para editarlo, o elige una sección aquí abajo. Los cambios se ven al momento, pero solo llegan a tu web cuando pulsas <strong>Publicar</strong>.</p>
+      <button type="button" class="linkbtn" id="intro-close">Entendido</button>
+    </div>
+    <p class="side__lang" id="lang-note" hidden>Estás editando la versión en <strong>inglés</strong>.</p>
+    <div class="banner" id="banner" hidden></div>
+    <nav id="sections" class="sections" aria-label="Secciones"></nav>
+  </aside>
+
+  <main class="stage" id="stage">
+    <div class="stage__frame" id="frame-wrap">
+      <iframe id="preview" title="Vista previa de la web"></iframe>
+    </div>
+  </main>
+
+  <button class="peek" type="button" id="peek">Ver vista previa</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script type="module" src="/admin/admin.js?v=2"></script>
+</body>
+</html>
