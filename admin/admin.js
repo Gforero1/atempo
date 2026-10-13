@@ -170,7 +170,8 @@ $('#login-form').addEventListener('submit', async e => {
     $('#login-pass').value = '';
     start();
   } catch (err) {
-    $('#login-msg').textContent = err.status === 429 ? 'Demasiados intentos. Espera 15 minutos y vuelve a probar.'
+    $('#login-msg').textContent = err.message === 'weak_secret' ? 'La contraseña configurada es demasiado corta (mínimo 12 caracteres). Pídele a Guillermo que la cambie.'
+      : err.status === 429 ? 'Demasiados intentos. Espera 15 minutos y vuelve a probar.'
       : err.status === 401 ? 'Esa contraseña no es correcta.' : 'No se pudo entrar. Revisa tu conexión.';
   } finally { btn.disabled = false; }
 });
@@ -213,6 +214,11 @@ function togglePeek(force) {
   $('#peek').textContent = on ? 'Volver a editar' : 'Ver vista previa';
 }
 
+$('#logout').addEventListener('click', async () => {
+  if (state && published && !same(state, published)) saveDraft();
+  try { await call('logout', { method: 'POST' }); } catch {}
+  location.reload();
+});
 $('#publish').addEventListener('click', publish);
 async function publish() {
   const btn = $('#publish');

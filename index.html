@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/albert-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/site.css?v=mv6i9wf7">
+<link rel="stylesheet" href="assets/css/site.css?v=mv6yrdzw">
 <style id="theme">@font-face{font-family:"Newsreader";src:url(assets/fonts/newsreader-latin-opsz-normal.woff2) format("woff2");font-weight:200 800;font-style:normal;font-display:swap}
 @font-face{font-family:"Newsreader";src:url(assets/fonts/newsreader-latin-opsz-italic.woff2) format("woff2");font-weight:200 800;font-style:italic;font-display:swap}
 @font-face{font-family:"Albert Sans";src:url(assets/fonts/albert-sans-latin-wght-normal.woff2) format("woff2");font-weight:100 900;font-style:normal;font-display:swap}
@@ -49,8 +49,18 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
       <a href="en/" hreflang="en" lang="en" data-lang="en"><span class="langs__long">English</span><span class="langs__short">EN</span></a>
     </nav>
     <a class="btn btn--small" href="#contacto">Primera consulta</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-open="Menú" data-close="Cerrar">Menú</button>
   </div>
 </header>
+<nav class="sheet" id="menu" aria-label="Secciones">
+  <ol>
+    <li><a href="#sobre">Sobre mí</a></li>
+    <li><a href="#terapia">Terapia</a></li>
+    <li><a href="#honorarios">Honorarios</a></li>
+    <li><a href="#preguntas">Preguntas</a></li>
+  </ol>
+  <a class="btn" href="#contacto">Primera consulta</a>
+</nav>
 
 <main id="main">
 
@@ -205,7 +215,7 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\b/i.test(navigator.language||
   <p class="foot__small">© 2026 Adelina Arocena</p>
 </footer>
 
-<script src="assets/js/site.js?v=mv6i9wf7" defer></script>
+<script src="assets/js/site.js?v=mv6yrdzw" defer></script>
 
 </body>
 </html>

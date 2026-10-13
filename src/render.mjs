@@ -184,8 +184,18 @@ try{if(!localStorage.getItem('atempo-lang')&&!/^es\\b/i.test(navigator.language|
       <a href="${P.en}" hreflang="en" lang="en" data-lang="en"${isEn ? ' class="is-on" aria-current="page"' : ''}><span class="langs__long">English</span><span class="langs__short">EN</span></a>
     </nav>
     <a class="btn btn--small" href="#contacto"${k('nav.contact')}>${esc(t.nav.contact)}</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" data-open="${isEn ? 'Menu' : 'Menú'}" data-close="${isEn ? 'Close' : 'Cerrar'}">${isEn ? 'Menu' : 'Menú'}</button>
   </div>
 </header>
+<nav class="sheet" id="menu" aria-label="${isEn ? 'Sections' : 'Secciones'}">
+  <ol>
+    <li><a href="#sobre">${esc(t.nav.about)}</a></li>
+    <li><a href="#terapia">${esc(t.nav.help)}</a></li>
+    <li><a href="#honorarios">${esc(t.nav.fees)}</a></li>
+    <li><a href="#preguntas">${esc(t.nav.faq)}</a></li>
+  </ol>
+  <a class="btn" href="#contacto">${esc(t.nav.contact)}</a>
+</nav>
 
 <main id="main">
 

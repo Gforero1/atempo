@@ -259,3 +259,70 @@ p{margin:0 0 1em}
 .quote,.contact,.portrait__frame{--brown-2:var(--brown)}
 .dock{box-shadow:0 0 0 1px color-mix(in srgb,var(--linen) 70%,transparent)}
 @media (max-width:879px){.hero{row-gap:28px}.pulse{height:56px;margin-top:4px}}
+
+/* ---------- Móvil (ajustado al medir la web a 390 px) ---------- */
+.menu-btn{display:none}
+.sheet{display:none}
+@media (max-width:959px){
+  .menu-btn{display:inline-flex;align-items:center;gap:.55em;appearance:none;background:none;border:0;padding:.7em .2em;font:500 .8rem/1 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--brown);cursor:pointer}
+  .menu-btn::before{content:"";width:18px;height:7px;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor}
+  .menu-btn[aria-expanded="true"]::before{height:0;border-bottom:0}
+  .sheet{display:block;position:fixed;inset:0;z-index:25;background:var(--linen);padding:96px var(--gut) 40px;opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;overflow-y:auto}
+  .sheet.is-open{opacity:1;visibility:visible}
+  .sheet ol{list-style:none;margin:0;padding:0;counter-reset:s}
+  .sheet li{border-top:1px solid var(--line);counter-increment:s}
+  .sheet li:last-child{border-bottom:1px solid var(--line)}
+  .sheet ol a{display:flex;align-items:baseline;gap:1rem;padding:1.05rem 0;text-decoration:none;font:400 1.9rem/1.1 var(--serif)}
+  .sheet ol a::before{content:counter(s,upper-roman) ".";font:italic 400 1rem/1 var(--serif);color:var(--rose);width:2rem}
+  .sheet .btn{margin-top:2rem}
+  .menu-open{overflow:hidden}
+  .menu-open .top{z-index:30;background:var(--linen)}
+  .sheet .btn{display:block;text-align:center}
+}
+@media (max-width:759px){
+  .top{padding-top:10px;padding-bottom:10px}
+  .top__end{gap:.6rem}
+  .langs a{padding:.72em .8em}
+  .mark__word{font-size:1.55rem}
+
+  /* Hero: la foto deja de ocupar una pantalla entera */
+  .hero{padding-top:28px;row-gap:24px}
+  .hero__lead{margin:1.2rem 0 1.6rem}
+  .hero__actions{gap:1rem 1.6rem}
+  .portrait{width:78%;justify-self:end}
+  .portrait__frame{aspect-ratio:4/5}
+  .pulse{height:48px;margin-top:0}
+  .pulse__row{gap:.2rem 1rem;margin-top:-.5rem}
+  .pulse__note{font-size:1.6rem}
+
+  /* Menos aire entre secciones: en móvil 80 px arriba y abajo se sienten vacíos */
+  .about{padding-top:64px;padding-bottom:48px;gap:1.6rem}
+  .help,.steps,.faq,.fees,.contact{padding-top:60px;padding-bottom:60px}
+  .steps,.faq{gap:1.6rem}
+  .kicker{margin-bottom:1rem}
+  .help__head h2{margin-bottom:28px}
+  .quote{margin-top:12px;padding:28px 24px 26px 34px}
+  .quote blockquote p::before{left:-.5em}
+
+  .movement{grid-template-columns:2.2rem 1fr;padding:18px 0}
+  .movement p{margin-top:.3rem}
+  .themes{margin-top:44px}
+  .themes__list li{padding:.45rem 0 .45rem 1.3rem}
+  .themes__list li::before{top:.95em}
+  .staff li{grid-template-columns:2rem minmax(0,1fr);padding:1rem 0}
+  .staff h3{font-size:1.3rem}
+  .programme__row{padding:.7rem 0}
+  .fees h2{margin-bottom:1.6rem}
+  .faq summary{font-size:1.15rem;padding:1.05rem 2.2rem 1.05rem 0}
+
+  /* Formulario más compacto */
+  .contact{gap:2rem}
+  .form{gap:1.15rem}
+  .field input{padding:.45rem 0}
+  .choice legend{margin-bottom:.5rem}
+  .choice span{padding:.6em .95em}
+
+  /* Botón fijo más ligero */
+  .dock{left:auto;right:12px;padding:.85em 1.2em;font-size:.95rem}
+  .foot{padding-top:44px}
+}

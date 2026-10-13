@@ -20,6 +20,21 @@
     onScroll();
   }
 
+  /* Menú en móvil */
+  var menuBtn = document.querySelector('.menu-btn');
+  var sheet = document.getElementById('menu');
+  if (menuBtn && sheet) {
+    var setMenu = function (open) {
+      sheet.classList.toggle('is-open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuBtn.textContent = open ? menuBtn.getAttribute('data-close') : menuBtn.getAttribute('data-open');
+      root.classList.toggle('menu-open', open);
+    };
+    menuBtn.addEventListener('click', function () { setMenu(!sheet.classList.contains('is-open')); });
+    sheet.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && sheet.classList.contains('is-open')) { setMenu(false); menuBtn.focus(); } });
+  }
+
   /* Barra de reserva en móvil */
   var dock = document.querySelector('.dock');
   var hero = document.querySelector('.hero');

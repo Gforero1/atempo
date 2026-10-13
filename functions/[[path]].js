@@ -15,17 +15,23 @@ const KEEP_HISTORY = 30;
 const KEEP_PHOTOS = 8;
 const MAX_FAILS = 8;
 
+const MIN_PASSWORD = 12;
 const SEC_HEADERS = {
   'X-Content-Type-Options': 'nosniff',
-  'Referrer-Policy': 'strict-origin-when-cross-origin'
+  'Referrer-Policy': 'strict-origin-when-cross-origin',
+  'Strict-Transport-Security': 'max-age=31536000; includeSubDomains',
+  'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()'
 };
+const PAGE_CSP = "base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self' https://formspree.io";
 
 export async function onRequest(ctx) {
   const { request, env } = ctx;
   const url = new URL(request.url);
   const p = url.pathname;
+  if (p.startsWith('/api/')) {
+    try { return await api(request, env, p.slice(5)); } catch { return json({ error: 'server' }, 500); }
+  }
   try {
-    if (p.startsWith('/api/')) return await api(request, env, p.slice(5));
     if (p.startsWith('/media/')) return await media(env, p);
     if (request.method !== 'GET' && request.method !== 'HEAD') return new Response('Method not allowed', { status: 405 });
     if (p === '/en') return Response.redirect(url.origin + '/en/' + url.search, 301);
@@ -38,10 +44,11 @@ export async function onRequest(ctx) {
     else if (p === '/en/privacy.html') html = renderLegal(content, 'en', { version: v });
     else return ctx.next();
     return new Response(html, {
-      headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=0, must-revalidate', 'X-Frame-Options': 'SAMEORIGIN', ...SEC_HEADERS }
+      headers: { 'Content-Type': 'text/html; charset=utf-8', 'Cache-Control': 'public, max-age=0, must-revalidate', 'X-Frame-Options': 'SAMEORIGIN', 'Content-Security-Policy': PAGE_CSP, ...SEC_HEADERS }
     });
   } catch (err) {
-    return json({ error: 'server' }, 500);
+    // Si algo falla (por ejemplo, el almacén no responde), se sirve la copia estática en vez de un error
+    return ctx.next();
   }
 }
 
@@ -143,11 +150,14 @@ async function login(request, env) {
   const rlKey = 'rl:' + ip;
   const fails = Number(await env.ATEMPO.get(rlKey) || 0);
   if (fails >= MAX_FAILS) return json({ error: 'too_many' }, 429);
+  // Contraseña del servidor demasiado corta: no se deja entrar hasta que se cambie por una más larga
+  if (String(env.ADMIN_PASSWORD).length < MIN_PASSWORD) return json({ error: 'weak_secret' }, 503);
   const body = await readJson(request);
   const pass = body && typeof body.password === 'string' ? body.password : '';
   const ok = pass.length > 0 && await sameSecret(pass, env.ADMIN_PASSWORD);
   if (!ok) {
     await env.ATEMPO.put(rlKey, String(fails + 1), { expirationTtl: 900 });
+    await new Promise(r => setTimeout(r, 700)); // cada intento fallido tarda: hace inútil probar contraseñas en serie
     return json({ error: 'wrong' }, 401);
   }
   await env.ATEMPO.delete(rlKey);
